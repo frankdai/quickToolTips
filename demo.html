@@ -41,6 +41,8 @@
     $('.tips').quickToolTips({
         'offsetX':120,
         'offsetY':-5,
+        displayEvent:'click',
+        hideEvent:'click',
         displayFunction:function(){
             $(this).addClass('hello');
         },
@@ -52,7 +54,7 @@
     $('.input-tips').quickToolTips({
         'offsetX':50,
         'offsetY':10,
-        displayEvent:"focus",
+        displayEvent:'focus',
         hideEvent:'blur',
         displayFunction:function(){
             $(this).addClass('world');

@@ -1,17 +1,7 @@
 (function($){ 
     'use strict'
     $.fn.quickToolTips = function(options) {
-           var init=function() {
-              var tooltips=document.createElement("div");
-              var body=document.body;
-              var $tooltips=$(tooltips);
-              tooltips.className="quicktooltips";
-              body.insertBefore(tooltips,body.firstChild);
-              body.style.position='relative';
-              $tooltips.css({'position':'absolute','display':'none'});
-              return $tooltips
-           }
-           var defaults={'offsetX':0,
+          var defaults={'offsetX':0,
                          'offsetY':0,
                          'displayEvent':'mouseover',
                          'hideEvent':'mouseout',
@@ -19,23 +9,49 @@
                           hideFunction:function(){},
                          'messages':[],
                         };
-           options=$.extend({}, defaults, options);
-           return this.each(function(index,element) {
+          var $tooltips;
+          options=$.extend({}, defaults, options);
+          return this.each(function(index,element) {
+                var tooltips=document.createElement("div");
+                var body=document.body;
+                var $tooltips=$(tooltips);
+                tooltips.className="quicktooltips";
+                body.style.position='relative';
+                $tooltips.css({'position':'absolute','display':'none'});
                 var docLeft,docTop;
                 var $element=$(element);
                 var message=element.getAttribute('data-tipsmsg')||options.messages[index]||' ';
-                var $tooltips;
-                $element.on(options.displayEvent,function(){
-                    $tooltips=init();
+                $element.data('clicked',false);
+                var show=function(){
+                    body.insertBefore(tooltips,body.firstChild);
                     docLeft=$element.offset().left+options.offsetX+'px';
                     docTop=$element.offset().top-options.offsetY+'px';
                     $tooltips.css({'top':docTop,'left':docLeft}).html(message).show();
+                    $element.data('clicked',true);
                     options.displayFunction.call(element);
-                })
-                $element.on(options.hideEvent,function(){
+                }
+                var hide=function(){
                     $tooltips.remove();
+                    $element.data('clicked',false);
                     options.hideFunction.call(element);
-                })
+                }
+                if (options.displayEvent!='click'&&options.hideEvent!='click') {
+                  $element.on(options.displayEvent,show);
+                  $element.on(options.hideEvent,hide);
+                }
+                else {
+                  $element.click(function(){
+                    if ($element.data('clicked')==false) {
+                      show();
+                      $element.data('clicked')==true;
+                    }
+                    else {
+                      hide();
+                      $element.data('clicked')==false;
+                    }
+                  })
+                }
+               
         }) 
         return this;
     }

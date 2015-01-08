@@ -46,4 +46,5 @@ Options explaination are follow (all of them are optional)
 | displayFunction | function | function to be called when tooltip hides | empty function |
 | message | array | array of strings which are used when data-tipsmsg attribute are not available | empty array
 
-> * Currently this plugin does not support click event as it requests a pair of different event types to show/hide tooltips. I will added support later
+> * Currently supported event type: mouseover/mouseout, mouseenter/mouseleave, focus/blur, click/click (similar to jQuery toggle function. Both displayEvent and hideEvent has to be sent to 'click')
+
