@@ -14,10 +14,14 @@
         color:#eee;
         margin-bottom: 20px;
     }
+    .tips.hello {
+        background: #aaa;
+    }
     .quicktooltips {
         background:#bbb;
         color:#444;
     }
+
     </style>
 </head>
 <body>
@@ -26,6 +30,12 @@
         <div class="tips" data-tipsmsg="tab2">Tab2</div> 
         <div class="tips" data-tipsmsg="tab3">Tab3</div> 
         <div class="tips" data-tipsmsg="tab4">Tab4</div> 
+    </div>
+    <div>
+        <input type="text" class="input-tips"></input> 
+        <input type="text" class="input-tips"></input> 
+        <input type="text" class="input-tips"></input> 
+        <input type="text" class="input-tips"></input> 
     </div>
     <script type="text/javascript">
     $('.tips').quickToolTips({
@@ -38,7 +48,20 @@
             $(this).removeClass('hello')
         },
         'messages':[1,2,3,4]
-    })
+    });
+    $('.input-tips').quickToolTips({
+        'offsetX':50,
+        'offsetY':10,
+        displayEvent:"focus",
+        hideEvent:'blur',
+        displayFunction:function(){
+            $(this).addClass('world');
+        },
+        hideFunction:function(){
+            $(this).removeClass('world')
+        },
+        'messages':['tip1','tip2','tip3','tip4']
+    });
     </script>
 </body>
 </html>
