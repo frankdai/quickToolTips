@@ -38,12 +38,12 @@ Options explaination are follow (all of them are optional)
 
 | options | type | explaination | default value |
 | ------- | :--: |------------ | :-------------: |
-| offsetX | number |Horizontal offset against element's left edge. Negative value will offset the tips message in right direction  | 0 |
-| offsetY | number | vertical offset against element's top edge. Negative value will offset the tips message in bottom direction | 0 |
-| displayEvent | string | event type to be fired in order to show the tips message * | mouseover |
-| hideEvent | string | event type to be fired in order to hide the tips message *| mouseover |
+| offsetX | number |Horizontal offset from left edge of element to left edge of tooltips in pixel. Negative value will offset the tips message in right direction  | 0 |
+| offsetY | number | Vertical offset from top edge of element to top edge of tooltips in pixel. Negative value will offset the tips message in bottom direction | 0 |
+| displayEvent* | string | event type to be fired in order to show the tips message  | mouseover |
+| hideEvent* | string | event type to be fired in order to hide the tips message | mouseout |
 | displayFunction | function | function to be called when tooltip shows | empty function | 
 | displayFunction | function | function to be called when tooltip hides | empty function |
 | message | array | array of strings which are used when data-tipsmsg attribute are not available | empty array
 
-> Currently this plugin does not support click event as it requests a pair of different event types to show/hide tooltips. I will added support later
+> * Currently this plugin does not support click event as it requests a pair of different event types to show/hide tooltips. I will added support later
