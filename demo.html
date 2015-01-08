@@ -28,7 +28,16 @@
         <div class="tips" data-tipsmsg="tab4">Tab4</div> 
     </div>
     <script type="text/javascript">
-    jQuery('.tips').quickToolTips({'offsetX':120,'offsetY':15})
+    $('.tips').quickToolTips({
+        'offsetX':120,
+        'offsetY':15,
+        displayFunction:function(){
+            $(this).addClass('hello');
+        },
+        hideFunction:function(){
+            $(this).removeClass('hello')
+        }
+    })
     </script>
 </body>
 </html>
