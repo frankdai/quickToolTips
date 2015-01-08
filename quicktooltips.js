@@ -8,7 +8,7 @@
            body.style.position='relative';
            $tooltips.css({'position':'absolute','display':'none'});
            return this.each(function() {
-                var defaults={'offsetX':0,'offsetY':0,'displayEvent':'mouseenter','hideEvent':'mouseleave'};
+                var defaults={'offsetX':0,'offsetY':0,'displayEvent':'mouseover','hideEvent':'mouseout'};
                 options=$.extend({}, defaults, options);
                 var that=this,
                   $this=$(this);
@@ -23,6 +23,7 @@
                     $tooltips.hide();
                 })
         }) 
+        return this;
     }
 })(jQuery)
 
