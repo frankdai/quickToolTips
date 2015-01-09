@@ -1,5 +1,7 @@
 # quickToolTips jQuery plugin
-A simple jQuery plugin that show and hide a tooltips over elements
+A simple jQuery plugin that show and hide a tooltips over elements 
+
+[Checkout Out Demo](http://frankdai.github.io/quickToolTips/) 
 
  * Customized event type (mouseover,mouseenter,mouseout,mouseleave,focus,blur etc.)
  * Customized functions to be called when tooltips show and hide 
@@ -11,7 +13,7 @@ To use, simply put your intended tips message in your element data-tipsmsg attri
 ```html
 <div class="tips" data-tipsmsg="tab1">Tab1</div>
 ```
-Add this plugin after jQuery library and then fire up this plugin:
+Add this plugin after jQuery library and then fire up this plugin (): 
 
 ```javascript
 $('.tips').quickToolTips();
