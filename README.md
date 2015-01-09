@@ -44,7 +44,7 @@ Options explaination are follow (all of them are optional)
 | hideEvent* | string | event type to be fired in order to hide the tips message | mouseout |
 | displayFunction | function | function to be called when tooltip shows | empty function | 
 | displayFunction | function | function to be called when tooltip hides | empty function |
-| message | array | array of strings which are used when data-tipsmsg attribute are not available | empty array
+| message | array | array of strings or html snippet which are used when data-tipsmsg attribute are not available | empty array
 
-> * Currently supported event type: mouseover/mouseout, mouseenter/mouseleave, focus/blur, click/click (similar to jQuery toggle function. Both displayEvent and hideEvent has to be sent to 'click')
+* Currently supported event type: mouseover/mouseout, mouseenter/mouseleave, focus/blur, click/click (similar to jQuery toggle function. Both displayEvent and hideEvent has to be sent to 'click'). You can also mix click/mouseout event but please consider making it user-friendly. 
 

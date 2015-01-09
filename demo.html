@@ -17,6 +17,9 @@
     .tips.hello {
         background: #aaa;
     }
+    .tipshover.hello {
+        background: #888;
+    }
     .quicktooltips {
         background:#bbb;
         color:#444;
@@ -26,19 +29,18 @@
 </head>
 <body>
     <div>
-        <div class="tips" data-tipsmsg="tab1">Tab1</div> 
-        <div class="tips" data-tipsmsg="tab2">Tab2</div> 
-        <div class="tips" data-tipsmsg="tab3">Tab3</div> 
-        <div class="tips" data-tipsmsg="tab4">Tab4</div> 
+        <div class="tips" data-tipsmsg="Click Hello">Click Me Hello</div> 
+        <div class="tips" data-tipsmsg="Click World">Click Me World</div> 
+        <div class="tipshover" data-tipsmsg="Hover Hello">Hover Me Hello</div> 
+        <div class="tipshover" data-tipsmsg="Hover World">Hover Me World</div> 
     </div>
     <div>
-        <input type="text" class="input-tips"></input> 
-        <input type="text" class="input-tips"></input> 
-        <input type="text" class="input-tips"></input> 
-        <input type="text" class="input-tips"></input> 
+        <input type="text" class="input-tips" vaule="type some word"></input> 
+        <input type="text" class="input-tips" vaule="type some word"></input> 
     </div>
     <script type="text/javascript">
-    $('.tips').quickToolTips({
+    $('.tipshover').quickToolTips({'offsetX':100,'offsetY':15}) //simplest usage
+    $('.tips').quickToolTips({  //customized event click
         'offsetX':120,
         'offsetY':-5,
         displayEvent:'click',
@@ -51,7 +53,7 @@
         },
         'messages':[1,2,3,4]
     });
-    $('.input-tips').quickToolTips({
+    $('.input-tips').quickToolTips({  //customized event,function and messages
         'offsetX':50,
         'offsetY':10,
         displayEvent:'focus',
