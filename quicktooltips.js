@@ -38,11 +38,9 @@
                   $element.click(function(){
                     if ($element.data('clicked')==false) {
                       show();
-                      $element.data('clicked')==true;
                     }
                     else {
                       hide();
-                      $element.data('clicked')==false;
                     }
                   })
                 }
