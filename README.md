@@ -19,6 +19,8 @@ Add this plugin after jQuery library and then fire up this plugin ():
 $('.tips').quickToolTips();
 ```
 
+It did not depends on any ID/Class so it will be safe to name your HTML ID/Class. You can even use an array for showing messages instead of using HTML data- attribute. 
+
 A more complex way will be:
 ```javascript
 $('.tips').quickToolTips({
